@@ -32,7 +32,7 @@ const Home = () => {
         }
 
 
-    }, [pasteId,allPastes]);
+    }, [pasteId, allPastes]);
 
     function createMyPaste() {
         const paste = {
@@ -99,7 +99,7 @@ const Home = () => {
                 {
                     pasteId && (
                         <button
-                            className="h-12 w-12 flex items-center justify-center bg-cyan-600 hover:bg-cyan-700 rounded-xl text-white transition-all duration-300 shadow-lg cursor-pointer" 
+                            className="h-12 w-12 flex items-center justify-center bg-cyan-600 hover:bg-cyan-700 rounded-xl text-white transition-all duration-300 shadow-lg cursor-pointer"
                         >
                             <NavLink to="/"><FontAwesomeIcon icon={faPlus} /></NavLink>
                         </button>

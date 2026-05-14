@@ -27,7 +27,7 @@ const Paste = () => {
 
     function handleCopy(paste) {
         navigator.clipboard.writeText(paste.content)
-        toast.success("Copy Successfully")
+        toast.success("Copied to clickboard")
     }
 
     return (
@@ -148,7 +148,7 @@ const Paste = () => {
 
                                                                 <input
                                                                     type="text"
-                                                                    value={`http://localhost:5173/pastes/${paste._id}`}
+                                                                    value={`https://paste-app-red-six.vercel.app/pastes/${paste._id}`}
                                                                     readOnly
                                                                     className="w-full p-3 rounded-lg bg-black border border-gray-700 text-white outline-none"
                                                                 />
@@ -158,17 +158,18 @@ const Paste = () => {
                                                                     <button
                                                                         onClick={() => {
                                                                             navigator.clipboard.writeText(
-                                                                                `http://localhost:5173/pastes/${paste._id}`
+                                                                                `https://paste-app-red-six.vercel.app/pastes/${paste._id}`
                                                                             )
+                                                                            toast.success("Copied to clickboard")
                                                                         }}
-                                                                        className="px-4 py-2 bg-cyan-600 hover:bg-cyan-700 text-white rounded-lg transition-all"
+                                                                        className="px-4 py-2 bg-cyan-600 hover:bg-cyan-700 text-white rounded-lg transition-all cursor-pointer"
                                                                     >
                                                                         Copy Link
                                                                     </button>
 
                                                                     <button
                                                                         onClick={close}
-                                                                        className="px-4 py-2 bg-gray-700 hover:bg-gray-800 text-white rounded-lg transition-all"
+                                                                        className="px-4 py-2 bg-gray-700 hover:bg-gray-800 text-white rounded-lg transition-all cursor-pointer"
                                                                     >
                                                                         Close
                                                                     </button>

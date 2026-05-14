@@ -5,21 +5,23 @@ import { useParams } from "react-router-dom"
 import toast from "react-hot-toast"
 // import toast from "react-hot-toast";
 const ViewPaste = () => {
-   const Allpastes = useSelector((state) => state.paste.pastes)
-   const {id}=useParams();
-   console.log(id);
-  //  console.log("View all pastes page",Allpastes)
-   const paste=Allpastes.find((item)=>
-    item._id===id
-  )
-  console.log(paste);
-  function handleCopyBtn(value){
+    const Allpastes = useSelector((state) => state.paste.pastes)
+    const { id } = useParams();
+    console.log(id);
+    //  console.log("View all pastes page",Allpastes)
+    const paste = Allpastes.find((item) =>
+        item._id === id
+    )
+    console.log(paste);
+    function handleCopyBtn(value) {
         navigator.clipboard.writeText(value)
         // console.log(value)
-        toast.success("Copied to clickboard")
+        toast.success("Copied to clickboard", {
+            duration: 1000,
+        })
     }
-  return (
-    <div className="home-main-container w-full flex flex-col items-center mt-5">
+    return (
+        <div className="home-main-container w-full flex flex-col items-center mt-5">
 
             {/* Top Section */}
             <div className="flex justify-between w-[80%] mb-5">
@@ -27,7 +29,7 @@ const ViewPaste = () => {
                     type="text"
                     value={paste.title}
                     placeholder="Enter title here"
-                    />
+                />
             </div>
 
             {/* Editor Box */}
@@ -44,7 +46,7 @@ const ViewPaste = () => {
                     </div>
 
                     {/* Copy Button */}
-                    <button className="text-white text-lg cursor-pointer" onClick={()=>handleCopyBtn(paste.content)}>
+                    <button className="text-white text-lg cursor-pointer" onClick={() => handleCopyBtn(paste.content)}>
                         <FontAwesomeIcon icon={faCopy} />
                     </button>
                 </div>
@@ -69,7 +71,7 @@ const ViewPaste = () => {
                 </div>
             </div>
         </div>
-  )
+    )
 }
 
 export default ViewPaste
