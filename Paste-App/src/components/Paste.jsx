@@ -141,7 +141,6 @@ const Paste = () => {
 
                                                     modal
                                                     nested
-
                                                     contentStyle={{
                                                         background: "transparent",
                                                         border: "none",
@@ -151,7 +150,7 @@ const Paste = () => {
                                                     }}
                                                 >
 
-                                                    {
+                                                   {
                                                         close => (
 
                                                             <div className="bg-[#111827] dark:bg-white p-6 rounded-xl border border-gray-700 dark:border-blue-300 w-[100%] transition-all duration-300">
