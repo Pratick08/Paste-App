@@ -69,7 +69,7 @@ const Home = () => {
     }
 
     return (
-        <div className="home-main-container w-full flex flex-col items-center mt-5">
+        <div className="home-main-container w-full flex flex-col items-center mt-5 ">
 
             {/* Top Section */}
             <div className="flex items-center justify-between w-[80%] mb-5 gap-3">
@@ -82,7 +82,7 @@ const Home = () => {
                         placeholder="Enter title here"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
-                        className="w-full h-12 rounded-xl bg-[#111827] border border-gray-700 pl-4 pr-4 text-sm text-white placeholder:text-gray-500 outline-none transition-all duration-300 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20"
+                        className="w-full h-12 rounded-xl bg-[#16171d] dark:bg-[#f5f7fb] border border-gray-700 dark:border-blue-300 pl-4 pr-4 text-sm text-white dark:text-black placeholder:text-gray-500 dark:placeholder:text-gray-400 outline-none transition-all duration-300 focus:border-cyan-500 dark:focus:border-blue-500 focus:ring-2 focus:ring-cyan-500/20 dark:focus:ring-blue-500/20"
                     />
 
                 </div>
@@ -109,10 +109,10 @@ const Home = () => {
             </div>
 
             {/* Editor Box */}
-            <div className="w-[80%] bg-[#1e1e1e] rounded-2xl overflow-hidden border border-gray-700 shadow-2xl">
+            <div className="w-[80%] bg-[#16171d] dark:bg-[#f5f7fb] rounded-2xl overflow-hidden border border-gray-700 dark:border-blue-300 shadow-2xl dark:shadow-blue-100 transition-all duration-300">
 
                 {/* Top Bar */}
-                <div className="flex items-center justify-between px-4 py-3 bg-[#2d2d2d] border-b border-gray-700">
+                <div className="flex items-center justify-between px-4 py-3 bg-[#22232b] dark:bg-blue-600 border-b border-gray-700 dark:border-blue-500 transition-all duration-300">
 
                     {/* Mac Style Dots */}
                     <div className="flex gap-2">
@@ -122,24 +122,25 @@ const Home = () => {
                     </div>
 
                     {/* Copy Button */}
-                    <button className="text-white text-lg cursor-pointer" onClick={() => handleCopyBtn(value)}>
+                    <button className="text-white dark:text-white text-lg cursor-pointer hover:scale-110 transition-all duration-300" onClick={() => handleCopyBtn(value)}>
                         <FontAwesomeIcon icon={faCopy} />
                     </button>
                 </div>
 
-                <div className="flex bg-[#1e1e1e]  overflow-hidden border border-gray-700">
+                <div className="flex bg-[#16171d] dark:bg-[#f5f7fb] overflow-hidden border border-gray-700 dark:border-blue-300 transition-all duration-300">
 
                     {/* Line Numbers */}
-                    <div className="w-12 bg-[#252526] text-gray-400 text-right font-mono text-sm py-2 pr-2 leading-6 select-none">
+                    <div className="w-12 bg-[#252526] dark:bg-[#e9eefc] text-gray-400 dark:text-gray-600 text-right font-mono text-sm py-2 pr-2 leading-6 select-none transition-all duration-300">
                         {value.split("\n").map((_, index) => (
-                            <div key={index} >
+                            <div key={index}>
                                 {index + 1}
                             </div>
                         ))}
                     </div>
 
                     {/* Textarea */}
-                    <textarea className="w-full bg-[#1e1e1e] text-white font-mono text-sm leading-6 py-2 pl-2 outline-none resize-none overflow-y-auto" //placeholder="Enter content here..."
+                    <textarea
+                        className="w-full bg-[#16171d] dark:bg-[#f5f7fb] text-white dark:text-black font-mono text-sm leading-6 py-2 pl-2 outline-none resize-none overflow-y-auto placeholder:text-gray-500 dark:placeholder:text-gray-400 transition-all duration-300"
                         value={value}
                         onChange={(e) => setValue(e.target.value)}
                         rows={20}

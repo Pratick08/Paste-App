@@ -21,11 +21,6 @@ export const pasteSlice = createSlice({
         },
         updateToPastes: (state, action) => {
             const paste = action.payload;
-            //ye  state.pastes array ke har ek index mein jake us perticular index id ko paste._id ke sath compair kar rahe hai 
-            // [0: { title: "a", content: "aa", _id: "ahh221s" },
-            //  1: { title: "a", content: "aa", _id: "ahh221s" },
-            //  2: { title: "a", content: "aa", _id: "ahh221s" }
-            // ]
             const index = state.pastes.findIndex((item) => 
                 item._id === paste._id
             )
