@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopy } from "@fortawesome/free-regular-svg-icons";
 import { useParams } from "react-router-dom"
 import toast from "react-hot-toast"
+import { NavLink } from "react-router-dom";
 // import toast from "react-hot-toast";
 const ViewPaste = () => {
     const Allpastes = useSelector((state) => state.paste.pastes)
@@ -24,12 +25,28 @@ const ViewPaste = () => {
         <div className="home-main-container w-full flex flex-col items-center mt-5">
 
             {/* Top Section */}
-            <div className="flex justify-between w-[80%] mb-5">
-                <input className="w-full h-12 rounded-xl bg-[#16171d] dark:bg-[#f5f7fb] border border-gray-700 dark:border-blue-300 pl-4 pr-4 text-sm text-white dark:text-black placeholder:text-gray-500 dark:placeholder:text-gray-400 outline-none transition-all duration-300 cursor-not-allowed" disabled
-                    type="text"
-                    value={paste.title}
-                    placeholder="Enter title here"
-                />
+            <div className="flex items-center justify-between w-[80%] mb-5 gap-3">
+
+                {/* INPUT */}
+                <div className="relative flex-1">
+
+                    <input
+                        type="text"
+                        placeholder="Enter title here"
+                        defaultValue={paste.title}
+                        className="w-full h-12 rounded-xl bg-[#16171d] dark:bg-[#f5f7fb] border border-gray-700 dark:border-blue-300 pl-4 pr-4 text-sm text-white dark:text-black placeholder:text-gray-500 dark:placeholder:text-gray-400 outline-none transition-all duration-300 focus:border-cyan-500 dark:focus:border-blue-500 focus:ring-2 focus:ring-cyan-500/20 dark:focus:ring-blue-500/20 cursor-not-allowed"
+                        disabled
+                    />
+
+                </div>
+
+                {/* CREATE / UPDATE BUTTON */}
+                <button
+                    className="h-12 px-6 bg-cyan-600 hover:bg-cyan-700 text-white rounded-xl cursor-pointer transition-all duration-300 font-medium shadow-lg "
+                ><NavLink to={`/?pastes=${paste._id}`}>Create Paste</NavLink>
+                </button>
+
+
             </div>
 
             {/* Editor Box */}
