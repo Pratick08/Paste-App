@@ -74,7 +74,7 @@ const ViewPaste = () => {
                 <div className="flex bg-[#16171d] dark:bg-[#f5f7fb] overflow-hidden border border-gray-700 dark:border-blue-300 transition-all duration-300">
 
                     {/* Line Numbers */}
-                    <div className="w-12 bg-[#252526] dark:bg-[#e9eefc] font-mono text-gray-400 dark:text-gray-600 text-right pr-2 text-sm pt-2 max-h-[620px] overflow-auto scrollbar-hide select-none transition-all duration-300">
+                    <div className="w-12 bg-[#252526] dark:bg-[#e9eefc] font-mono text-gray-400 dark:text-gray-600 text-right pr-2 text-sm pt-2 max-h-155 overflow-auto scrollbar-hide select-none transition-all duration-300">
 
                         {paste.content.split("\n").map((_, index) => (
                             <div key={index}>
@@ -86,7 +86,7 @@ const ViewPaste = () => {
 
                     {/* Textarea */}
                     <textarea
-                        className="min-h-[300px] text-sm overflow-y-auto border-none rounded-none focus:ring-0 pl-2 pt-2 w-full bg-[#16171d] dark:bg-[#f5f7fb] text-white dark:text-black font-normal placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none resize-none leading-tight cursor-not-allowed transition-all duration-300"
+                        className="min-h-75 text-sm overflow-y-auto border-none rounded-none focus:ring-0 pl-2 pt-2 w-full bg-[#16171d] dark:bg-[#f5f7fb] text-white dark:text-black font-normal placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none resize-none leading-tight cursor-not-allowed transition-all duration-300"
                         disabled
                         value={paste.content}
                         rows={20}

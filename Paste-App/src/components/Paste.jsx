@@ -64,7 +64,7 @@ const Paste = () => {
                                 className="rounded-xl p-6 hover:border-cyan-500 dark:hover:border-blue-400 transition-all duration-300"
                             >
 
-                                <div className="border border-gray-700 dark:border-blue-300 bg-[#1b1d23] dark:bg-white w-full gap-y-6 justify-between flex flex-col sm:flex-row p-4 rounded-[0.5rem] shadow-lg dark:shadow-md transition-all duration-300">
+                                <div className="border border-gray-700 dark:border-blue-300 bg-[#1b1d23] dark:bg-white w-full gap-y-6 justify-between flex flex-col sm:flex-row p-4 rounded-lg shadow-lg dark:shadow-md transition-all duration-300">
 
                                     {/* LEFT SIDE */}
                                     <div className="flex flex-col space-y-3 items-start">
@@ -75,7 +75,7 @@ const Paste = () => {
                                         </h1>
 
                                         {/* CONTENT */}
-                                        <p className="text-xs font-normal text-[#c5c4c4] dark:text-gray-600 max-w-[80%] mt-3 leading-6 line-clamp-3 w-full break-words text-left transition-all duration-300" style={{ marginTop: "12px" }}>
+                                        <p className="text-xs font-normal text-[#c5c4c4] dark:text-gray-600 max-w-[80%] mt-3 leading-6 line-clamp-3 w-full wrap-break-word text-left transition-all duration-300" style={{ marginTop: "12px" }}>
                                             {paste.content}
                                         </p>
                                     </div>
@@ -150,10 +150,10 @@ const Paste = () => {
                                                     }}
                                                 >
 
-                                                   {
+                                                    {
                                                         close => (
 
-                                                            <div className="bg-[#111827] dark:bg-white p-6 rounded-xl border border-gray-700 dark:border-blue-300 w-[100%] transition-all duration-300">
+                                                            <div className="bg-[#111827] dark:bg-white p-6 rounded-xl border border-gray-700 dark:border-blue-300 w-full transition-all duration-300">
 
                                                                 <h2 className="text-white dark:text-[#111827] text-xl font-semibold mb-4">
                                                                     Share Paste
@@ -264,10 +264,15 @@ const Paste = () => {
 
                 {
                     filteredData.length <= 0 &&
-                    <div
-                        className="text-2xl text-center w-full pt-4 text-orange-500 dark:text-blue-600 transition-all duration-300"
-                    >
-                        No Data Found
+                    <div className="w-full flex items-center justify-center py-10 transition-all duration-300">
+                        <div className="flex flex-col">
+                            <h1 className="text-3xl font-bold text-gray-200 dark:text-[#16171d] tracking-wide">
+                                No Paste Found
+                            </h1>
+                            <p className="mt-3 text-sm text-gray-400 dark:text-gray-500">
+                                Your search did not match any paste
+                            </p>
+                        </div>
                     </div>
                 }
 
